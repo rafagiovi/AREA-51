@@ -20,7 +20,7 @@
             border-bottom: 1px solid rgb(202, 181, 160); 
             border-radius: 10px;        
         }
-            h4 {
+        h4 {
             background-color:#998a79;
             border-left: 1px solid rgb(202, 181, 160); 
             border-right: 1px solid rgb(202, 181, 160); 
@@ -29,7 +29,7 @@
             border-radius: 10px;  
             padding: 5px;
             margin-top:10px;
-            color:rgb(255, 251, 246)
+            color:rgb(255, 255, 255)
         }
         .format {
             background-color:#fffbf6;
@@ -41,7 +41,7 @@
             padding: 20px;
             margin-top:10px
         }
-            .css {
+        .css {
             background-color:#fffbf6;
             border-left: 1px solid rgb(202, 181, 160); 
             border-right: 1px solid rgb(202, 181, 160); 
@@ -50,6 +50,27 @@
             border-radius: 10px;  
             padding: 20px;
             margin-top:10px
+        }
+        pre::before {
+            content: '';
+            position: absolute;
+            top: 18px;
+            left: 20px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #ef4444; 
+            box-shadow: 20px 0 0 #eab308, 40px 0 0 #22c55e; 
+        }
+        pre {
+            background-color: #2a210f; 
+            color: #e2e8f0;
+            padding: 50px 20px 20px 20px; 
+            overflow-x: auto;
+            font-family: 'Fira Code', 'Courier New', monospace;
+            border-radius: 10px; 
+            position: relative;
+            
         }
         .contoh-desain-css {
             background-color: #ffffff; 
@@ -81,7 +102,7 @@
     </header>
 
     <section class="format">
-        <p>Walaupun website ini hanya berisi teks, belum ada desain, tetapi website ini adalah langkah pertama untuk mempelajari bahasa HTML, basic dari WebDev.</p>
+        <p>Walaupun website ini hanya berisi teks, <del>belum ada desain</del>, tetapi website ini adalah langkah pertama untuk mempelajari bahasa HTML, basic dari WebDev.</p>
         <p>Website ini akan fokus mempelajari fundamental dari HTML, CSS, dan JavaScript, seperti kode-kode yang sering digunakan untuk format atau penulisan teks</p>
         <p>Contohnya, untuk menulis paragraf seperti ini, tag yang digunakan adalah <b>"&lt;p&gt;"</b> yang artinya adalah paragraf. Lalu juga ada <b>"&lt;h[1-6]&gt;"</b>yang fungsinya memberi judul atau heading</p>
 
@@ -120,13 +141,14 @@
         <h4>DESIGNING WITH CSS!</h4>
         <p>Pada bagian ini, kita akan mulai untuk masuk ke bahasa pemrograman CSS, yang berfungsi untuk memberi desain pada HTML agar tidak terlihat flat.</p>
         <p>Sebagai awalan, bisa kita mulai dengan kode untuk mendesain teks yang paling simpel yaitu sebagai berikut:</p>
-
-        <pre>&lt;style&gt;
-            Selector {
-                property: value;
-                property2: value;
-            }
-        &lt;style&gt;</pre>
+        <pre>
+&lt;style&gt;
+    Selector {
+        property: value;
+        property2: value;
+    }
+&lt;style&gt;
+</pre>
 
         <p>Disini, <b>style</b> berfungsi untuk membuat bagian desainnya, lalu property adalah bagian yang di select untuk diberikan desain, kalau value tau sendiri lah ya😋, contoh deh ini:</p>
 
@@ -139,31 +161,31 @@
         </div>
 
         <p>Pada bagian tersebut, digunakan kode seperti ini:</p>
-        <pre>
-            &lt;style&gt;
-                .contoh-desain-css {
-                    background-color: #fafafa;
-                    border-left: 5px solid rgb(150, 150, 150);
-                    border-right: 5px solid rgb(150, 150, 150); 
-                    border-top: 5px solid rgb(150, 150, 150); 
-                    border-bottom: 5px solid rgb(150, 150, 150); 
-                    padding: 20px;
-                    margin-top: 30px;
+<pre>
+&lt;style&gt;
+    .contoh-desain-css {
+        background-color: #fafafa;
+        border-left: 5px solid rgb(150, 150, 150);
+        border-right: 5px solid rgb(150, 150, 150); 
+        border-top: 5px solid rgb(150, 150, 150); 
+        border-bottom: 5px solid rgb(150, 150, 150); 
+        padding: 20px;
+        margin-top: 30px;
 
-                    font-family: sans-serif;
-                }
-                .contoh-desain-css h1 {
-                    text-align:center;
-                    color:rgb(68, 51, 35);
-                }
-                .contoh-desain-css h4 {
-                    color:rgb(63, 43, 23)
-                }
-                .contoh-desain-css p {
-                    text-align:justify
-                }
-            &lt;style&gt;
-        </pre>
+        font-family: sans-serif;
+    }
+    .contoh-desain-css h1 {
+        text-align:center;
+        color:rgb(68, 51, 35);
+    }
+    .contoh-desain-css h4 {
+        color:rgb(63, 43, 23)
+    }
+    .contoh-desain-css p {
+        text-align:justify
+    }
+&lt;style&gt;
+</pre>
     </section>
 </body>
 </html>
