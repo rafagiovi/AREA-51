@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator</title>
+
+    <!-- <style type="text/css">
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        .calculator{
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #17181c;
+
+            
+        }
+        table{
+            padding: 40px;
+            border-radius: 20px;
+            width: 100%;
+            max-width: 100px;
+            box-shadow: -8px -8px 15px rgba(255, 255, 255, 0.1),5px 5px 15px rgba(0, 0, 0, 0.2);
+            background: #041C32;
+            font-size: 20px;
+            color: black;
+        }
+        #layar{
+            width: 100%;
+            height: 80px;
+            text-align: right;
+            margin-bottom: 10px;
+            font-size: 36px;
+            padding: 20px;
+            box-sizing: border-box;
+            border: none;
+            outline: none;
+        }
+        
+        button{
+            font-size: 30px;
+            width: 80px;
+            height: 80px;
+            border: none;
+            outline: none;
+            background-color: #445069;
+            color: #fff;
+        }
+
+        
+        
+    </style> -->
+
+    
+</head>
+<body>
+    <marquee behavior="" direction="left">Selamat datang di Kalkulator kepunyaan XII MIPA 1/22 Muhammad Khoirunas</marquee>
+    <div class="calculator">
+        <table border="2">
+            <tr>
+                <td  colspan="4" style="background-color: white;">
+                    <p id="layar"></p>
+                </td>
+            </tr>
+            </div>
+            <tr >
+                <td><button id="b1" value="1" onclick="satu()">1</button></td>
+                <td><button id="b2" value="2" onclick="dua()">2</button></td>
+                <td><button id="b3" value="3" onclick="tiga()">3</button></td>
+                <td><button id="b+" value="+" onclick="btambah()">+</button></td>
+            </tr>
+            <tr>
+                <td><button id="b4" value="4" onclick="empat()">4</button></td>
+                <td><button id="b5" value="5" onclick="lima()">5</button></td>
+                <td><button id="b6" value="6" onclick="enam()">6</button></td>
+                <td><button id="b-" value="-" onclick="bkurang()">-</button></td>
+            </tr>
+            <tr>
+                <td><button id="b7" value="7" onclick="tujuh()">7</button></td>
+                <td><button id="b8" value="8" onclick="delapan()">8</button></td>
+                <td><button id="b9" value="9" onclick="sembilan()">9</button></td>
+                <td><button id="b:" value="/" onclick="bbagi()">:</button></td>
+            </tr>
+            <tr>
+                <td><button id="bc" value="c" onclick="c()" style="background-color: #D21312;">C</button></td>
+                <td><button id="b0" value="0" onclick="nol()">0</button></td>
+                <td><button id="b=" value="=" onclick="bsamadengan()">=</button></td>
+                <td><button id="bx" value="*" onclick="bkali()">x</button></td>
+            </tr>
+        </div>
+    </table>
+
+    <!--Kode Javascript-->
+    <script>
+        function satu(){
+            var data = document.getElementById("b1").value;
+            var datalayar = document.getElementById("layar").innerHTML;
+            document.getElementById("layar").innerHTML = datalayar + data;
+        }
+        function dua(){
+            var data = document.getElementById("b2").value;
+            var datalayar = document.getElementById("layar").innerHTML;
+            document.getElementById("layar").innerHTML = datalayar + data;
+        }function tiga(){
+            var data = document.getElementById("b3").value;
+            var datalayar = document.getElementById("layar").innerHTML;
+            document.getElementById("layar").innerHTML = datalayar + data;
+        }function empat(){
+            var data = document.getElementById("b4").value;
+            var datalayar = document.getElementById("layar").innerHTML;
+            document.getElementById("layar").innerHTML = datalayar + data;
+        }function lima(){
+            var data = document.getElementById("b5").value;
+            var datalayar = document.getElementById("layar").innerHTML;
+            document.getElementById("layar").innerHTML = datalayar + data;
+        }function enam(){
+            var data = document.getElementById("b6").value;
+            var datalayar = document.getElementById("layar").innerHTML;
+            document.getElementById("layar").innerHTML = datalayar + data;
+        }function tujuh(){
+            var data = document.getElementById("b7").value;
+            var datalayar = document.getElementById("layar").innerHTML;
+            document.getElementById("layar").innerHTML = datalayar + data;
+        }function delapan(){
+            var data = document.getElementById("b8").value;
+            var datalayar = document.getElementById("layar").innerHTML;
+            document.getElementById("layar").innerHTML = datalayar + data;
+        }function sembilan(){
+            var data = document.getElementById("b9").value;
+            var datalayar = document.getElementById("layar").innerHTML;
+            document.getElementById("layar").innerHTML = datalayar + data;
+        }function nol(){
+            var data = document.getElementById("b0").value;
+            var datalayar = document.getElementById("layar").innerHTML;
+            document.getElementById("layar").innerHTML = datalayar + data;
+        }function nol(){
+            var data = document.getElementById("b0").value;
+            var datalayar = document.getElementById("layar").innerHTML;
+            document.getElementById("layar").innerHTML = datalayar + data;
+        }function c(){
+                document.getElementById("layar").innerHTML = "";
+        }function btambah(){
+            var data = document.getElementById("b+").value;
+            var datalayar = document.getElementById("layar").innerHTML;
+            document.getElementById("layar").innerHTML = datalayar + data;
+        }function bbagi(){
+            var data = document.getElementById("b:").value;
+            var datalayar = document.getElementById("layar").innerHTML;
+            document.getElementById("layar").innerHTML = datalayar + data;
+        }
+        function bkurang(){
+            var data = document.getElementById("b-").value;
+            var datalayar = document.getElementById("layar").innerHTML;
+            document.getElementById("layar").innerHTML = datalayar + data;
+        }function bkali(){
+            var data = document.getElementById("bx").value;
+            var datalayar = document.getElementById("layar").innerHTML;
+            document.getElementById("layar").innerHTML = datalayar + data;
+        }
+        function bsamadengan(){
+            var datalayar = document.getElementById("layar").innerHTML;
+            document.getElementById("layar").innerHTML = eval(datalayar);
+        }
+    </script>    
+</body>
+</html>
