@@ -49,10 +49,6 @@
             <h2>Silahkan mulai menebak!</h2>
         </div>
 
-        <div id="Akumulasi Nominal">
-            <p>Jumlah total: <span id="TampilanPoin">0</span> </p>
-        </div>
-
         <div id="Board">
                 <button id="s1c1" class="card"></button>
                 <button id="s1c2" class="card"></button>
@@ -118,6 +114,21 @@
             MainPage.style.display = 'none';
             Penjelasan.style.display = 'none';
             GameBoard.style.display = 'block';
+        };
+
+        MulaiSesi();
+
+        function MulaiSesi() {
+            Kartu.forEach(function(k) {
+                k.innerText = "?";
+                k.disabled = "False";
+                k.style.opacity = "1";
+                k.style.backgroundColor = "";
+            })
+            Kartu.forEach(function(k) {
+                let Acak = Math.floor(Math.random()) * PoinKartu.length
+                let dapatPoin = PoinKartu[Acak]
+            })
         };
 
     </script>
