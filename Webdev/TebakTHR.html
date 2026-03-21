@@ -10,10 +10,6 @@
             display: none;
         }
 
-        #sesi2, #sesi3 {
-            display: none;
-        }
-
     </style>
 </head>
     <section id="MainPage">
@@ -53,36 +49,17 @@
             <h2>Silahkan mulai menebak!</h2>
         </div>
 
-        <div id="Board">
+        <div id="Akumulasi Nominal">
+            <p>Jumlah total: <span id="TampilanPoin">0</span> </p>
+        </div>
 
-            <div id="sesi1">
+        <div id="Board">
                 <button id="s1c1" class="card"></button>
                 <button id="s1c2" class="card"></button>
                 <button id="s1c3" class="card"></button>
-                <br>
                 <button id="s1c4" class="card"></button>
                 <button id="s1c5" class="card"></button>
                 <button id="s1c6" class="card"></button>
-            </div>
-            <br>
-            <div id="sesi2">
-                <button id="s2c1" class="card"></button>
-                <button id="s2c2" class="card"></button>
-                <button id="s2c3" class="card"></button>
-                <br>
-                <button id="s2c4" class="card"></button>
-                <button id="s2c5" class="card"></button>
-                <button id="s2c6" class="card"></button>
-            </div>
-            <br>
-            <div id="sesi3">
-                <button id="s3c1" class="card"></button>
-                <button id="s3c2" class="card"></button>
-                <button id="s3c3" class="card"></button>
-                <br>
-                <button id="s3c4" class="card"></button>
-                <button id="s3c5" class="card"></button>
-                <button id="s3c6" class="card"></button>
             </div>
         </div>
     </section>
@@ -104,7 +81,7 @@
         const Login = document.getElementById('PopUpLogin');
         const Penjelasan = document.getElementById('Penjelasan');
         const GameBoard = document.getElementById('GameBoard');
-        const Sesi1 = document.getElementById('sesi1');
+        const Board = document.getElementById('Board');
 
         const btn_MPLanjut = document.getElementById('mp_lanjut');
         const btn_LLanjut = document.getElementById('l_lanjut');
@@ -112,6 +89,12 @@
 
         const inputNama = document.getElementById('nama');
         const inputTelp = document.getElementById('telp');
+
+        const Kartu = document.querySelectorAll('.card')
+        const PoinKartu = [0, 0, 0, 0, 0, 250, 500, 2500, 5000];
+
+        let AkumulasiPoin = 0;
+        let SesiSekarang = 1;
 
         btn_MPLanjut.onclick = function() {
             Login.style.display = 'block';
@@ -136,7 +119,6 @@
             Penjelasan.style.display = 'none';
             GameBoard.style.display = 'block';
         };
-
 
     </script>
 
