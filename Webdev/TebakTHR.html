@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tebak-Tebak ber-THR</title>
+</head>
+<body>
+    <section id="MainPage">
+        <h1>TEBAK-TEBAK BER-THR</h1>
+        <p>Selamat datang! Anda mendapat kesempatan untuk mendapat THR hingga sebesar 20 ribu Rupiah!</p>
+        <h4>Created by: rafagiovi</h4>
+        <button id="mp_lanjut">Lanjut</button>
+    </section>
+
+    <div id="PopUpLogin">
+        <h4>Login</h4>
+        <p>Sebelum lanjut ke permainan, silahkan login terlebih dahulu. Akumulasi nominal akan dikirimkan melalui Gopay selama 1x24 jam</p>
+        <label for="nama">Nama: </label>
+        <input id="nama" type="text" required>
+        <br>
+        <label for="telp">No Telepon: </label>
+        <input id="telp" type="tel" required>
+        <br><br>
+        <button id="l_lanjut">Login</button>
+    </div>
+
+    <div id="Penjelasan">
+        <h3>TEBAK-TEBAK BER-THR</h3>
+        <p>Cara bermain:</p>
+            <ol>
+                <li>Permainan ini akan memiliki 3 sesi, masing-masing sesinya anda dapat menebak salah satu kartu dengan kemungkinan mendapat poin Rp0 hingga Rp5000</li>
+                <li>Setelah sesi berakhir, poin akan diakumulasi dan akan segera dikirimkan melalui GoPay</li>
+                <li>Anda hanya boleh mencoba satu kali pada permainan ini</li>
+            </ol>
+        <p>Note: Anda bisa mendapatkan THR selama nominal yang ditentukan masih tersedia</p>
+        <button id="p_lanjut">Lanjut</button>
+    </div>
+
+    <section id="GameBoard">
+
+        <div id="BoardTitle">
+            <h2>Silahkan mulai menebak!</h2>
+        </div>
+
+        <div id="Board">
+
+            <div id="sesi1">
+                <button id="s1c1" class="card"></button>
+                <button id="s1c2" class="card"></button>
+                <button id="s1c3" class="card"></button>
+                <br>
+                <button id="s1c4" class="card"></button>
+                <button id="s1c5" class="card"></button>
+                <button id="s1c6" class="card"></button>
+            </div>
+            <br>
+            <div id="sesi2">
+                <button id="s2c1" class="card"></button>
+                <button id="s2c2" class="card"></button>
+                <button id="s2c3" class="card"></button>
+                <br>
+                <button id="s2c4" class="card"></button>
+                <button id="s2c5" class="card"></button>
+                <button id="s2c6" class="card"></button>
+            </div>
+            <br>
+            <div id="sesi3">
+                <button id="s3c1" class="card"></button>
+                <button id="s3c2" class="card"></button>
+                <button id="s3c3" class="card"></button>
+                <br>
+                <button id="s3c4" class="card"></button>
+                <button id="s3c5" class="card"></button>
+                <button id="s3c6" class="card"></button>
+            </div>
+        </div>
+    </section>
+
+    <div id="Loading">
+        <h3>Loading...</h3>
+    </div>
+
+    <section id="Congrats">
+        <h3>Selamat! Anda mendapatkan total nominal sebanyak:</h3>
+        <div id="total">
+            <h1 id="TotalNominal"></h1>
+        </div>
+        <p>Terimakasih karena sudah mencoba bermain permainan ini!</p>
+    </section>    
+</body>
+</html>
