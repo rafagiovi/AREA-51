@@ -16,7 +16,6 @@
 
     </style>
 </head>
-<body>
     <section id="MainPage">
         <h1>TEBAK-TEBAK BER-THR</h1>
         <p>Selamat datang! Anda mendapat kesempatan untuk mendapat THR hingga sebesar 20 ribu Rupiah!</p>
@@ -99,5 +98,47 @@
         </div>
         <p>Terimakasih karena sudah mencoba bermain permainan ini!</p>
     </section>    
+
+    <script>
+        const MainPage = document.getElementById('MainPage');
+        const Login = document.getElementById('PopUpLogin');
+        const Penjelasan = document.getElementById('Penjelasan');
+        const GameBoard = document.getElementById('GameBoard');
+        const Sesi1 = document.getElementById('sesi1');
+
+        const btn_MPLanjut = document.getElementById('mp_lanjut');
+        const btn_LLanjut = document.getElementById('l_lanjut');
+        const btn_PLanjut = document.getElementById('p_lanjut');
+
+        const inputNama = document.getElementById('nama');
+        const inputTelp = document.getElementById('telp');
+
+        btn_MPLanjut.onclick = function() {
+            Login.style.display = 'block';
+        };
+
+        btn_LLanjut.onclick = function() {
+            let NamaUser = inputNama.value;
+            let TelpUser = inputTelp.value;
+
+            if (NamaUser ===  "" || TelpUser === "" ) {
+                alert("Harap masukkan data terlebih dahulu!")
+                return;
+            }
+
+            MainPage.style.display = 'none';
+            Login.style.display = 'none';
+            Penjelasan.style.display = 'block';
+        };
+
+        btn_PLanjut.onclick = function() {
+            MainPage.style.display = 'none';
+            Penjelasan.style.display = 'none';
+            GameBoard.style.display = 'block';
+        };
+
+
+    </script>
+
 </body>
 </html>
