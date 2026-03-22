@@ -12,10 +12,13 @@
 
     </style>
 </head>
+<!-- PONDASI WEBSITE -->
+<body>
     <section id="MainPage">
         <h1>TEBAK-TEBAK BER-THR</h1>
-        <p>Selamat datang! Anda mendapat kesempatan untuk mendapat THR hingga sebesar 20 ribu Rupiah!</p>
+        <p>Selamat datang! Anda mendapat kesempatan untuk mendapat THR hingga sebesar 25 ribu Rupiah!</p>
         <h4>Created by: rafagiovi</h4>
+        <p>Assisted by: Gemini</p>
         <button id="mp_lanjut">Lanjut</button>
     </section>
 
@@ -35,7 +38,8 @@
         <h3>TEBAK-TEBAK BER-THR</h3>
         <p>Cara bermain:</p>
             <ol>
-                <li>Permainan ini akan memiliki 3 sesi, masing-masing sesinya anda dapat menebak salah satu kartu dengan kemungkinan mendapat poin Rp0 hingga Rp5000</li>
+                <li>Permainan ini akan memiliki lima sesi, masing-masing sesinya anda dapat menebak salah satu kartu dengan kemungkinan mendapat poin Rp0 hingga Rp5000</li>
+                <li>Pastikan bijak dalam memilih, bisa jadi salah satu diantara enam kartu terdapat bom</li>
                 <li>Setelah sesi berakhir, poin akan diakumulasi dan akan segera dikirimkan melalui GoPay</li>
                 <li>Anda hanya boleh mencoba satu kali pada permainan ini</li>
             </ol>
@@ -72,7 +76,11 @@
         <p>Terimakasih karena sudah mencoba bermain permainan ini!</p>
     </section>    
 
+<!-- MESIN LOGIKA -->
+
     <script>
+
+        // DEKLARASI FUNGSI
         const MainPage = document.getElementById('MainPage');
         const Login = document.getElementById('PopUpLogin');
         const Penjelasan = document.getElementById('Penjelasan');
@@ -87,11 +95,12 @@
         const inputTelp = document.getElementById('telp');
 
         const Kartu = document.querySelectorAll('.card')
-        const PoinKartu = [0, 0, 0, 0, 0, 250, 500, 2500, 5000];
+        const PoinKartu = [-500 ,300 ,67 ,69, 500, 2000, 1000, -200, 5000];
 
         let AkumulasiPoin = 0;
         let SesiSekarang = 1;
 
+        // TOMBOL
         btn_MPLanjut.onclick = function() {
             Login.style.display = 'block';
         };
@@ -116,18 +125,51 @@
             GameBoard.style.display = 'block';
         };
 
+        // LOGIKA REKURSIF KARTU
         MulaiSesi();
 
         function MulaiSesi() {
+            // DESAIN KARTU
             Kartu.forEach(function(k) {
                 k.innerText = "?";
-                k.disabled = "False";
+                k.disabled = false;
                 k.style.opacity = "1";
                 k.style.backgroundColor = "";
             })
+            // SISTEM LOGIKA
             Kartu.forEach(function(k) {
-                let Acak = Math.floor(Math.random()) * PoinKartu.length
-                let dapatPoin = PoinKartu[Acak]
+
+                k.onclick = function() {
+                    let Acak = Math.floor(Math.random() * PoinKartu.length)
+                    let dapatPoin = PoinKartu[Acak]
+
+                    PoinKartu.splice(Acak, 1);
+
+                    k.innerText = "Rp" + dapatPoin;
+                    k.style.backgroundColor = "lightgreen";
+
+                    AkumulasiPoin += dapatPoin;
+
+                    Kartu.forEach(function(tombol) {
+                        tombol.disabled = true;
+                        if (tombol !== k) {
+                            tombol.style.opacity = "0.5";
+                        }
+                    });
+                    
+                    setTimeout(function(){
+                        if (SesiSekarang < 5) {
+                            SesiSekarang++;
+                            MulaiSesi();
+                        } else {
+                            GameBoard.style.display = 'none';
+                            document.getElementById('Congrats').style.display = 'block';
+
+                            document.getElementById('TotalNominal').innerText = "Rp" + AkumulasiPoin;
+                    }
+                
+                }, 2000)
+            }
             })
         };
 
